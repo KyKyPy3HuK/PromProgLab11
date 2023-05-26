@@ -19,7 +19,16 @@ public class OrdersController {
 
     @GetMapping()
     public String index(){
-        return "products/index";
+        return "orders/index";
+    }
+    @GetMapping("/ordersList")
+    public String ordersList(Model model){
+        model.addAttribute("orders",orderDao.ordersList());
+        return "orders/ordersList";
     }
 
+    @GetMapping("/orderByProductForm")
+    public String orderByProductForm(){
+        return "orderByProductForm";
+    }
 }

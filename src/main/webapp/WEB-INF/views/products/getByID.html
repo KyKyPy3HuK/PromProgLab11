@@ -2,17 +2,33 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Продукт</title>
+    <title>Товар</title>
 </head>
 <body>
-    <p>Product</p>
-    <p th:text="${product.getId()}">VALUE</p>
-    <p th:text="${product.getName()}">VALUE</p>
-    <p th:text="${product.getDescription()}">VALUE</p>
-    <p th:text="${product.getCost()}">VALUE</p>
-    <a th:href="@{/products/{id}/edit (id=${product.getId()})}">Edit</a>
+<a href="/products">Назад</a>
+<br>
+<hr/>
+    <p>Информация о товаре</p>
+    <p>
+        <div>ID: </div>
+        <div th:text="${product.getId()}"></div>
+        <br>
+        <div>Наименование: </div>
+        <div th:text="${product.getName()}"></div>
+        <br>
+        <div>Описание: </div>
+        <div th:text="${product.getDescription()}"></div>
+        <br>
+        <div>Стоимость: </div>
+        <div th:text="${product.getCost()}"></div>
+    </p>
+<hr>
+
+    <a th:href="@{/products/{id}/edit (id=${product.getId()})}">Редактировать товар</a>
+
     <form th:action="@{/products/{id}(id=${product.getId()})}" th:method="DELETE">
-        <input type="submit" value="Delete"/>
+        <hr>
+        <input type="submit" value="Удалить товар"/>
     </form>
 </body>
 </html>

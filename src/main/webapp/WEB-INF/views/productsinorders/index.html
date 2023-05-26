@@ -5,7 +5,11 @@
   <title>Продукты в заказах</title>
 </head>
 <body>
+<a href="/index">Назад</a>
+<br>
+<hr/>
 <div th:each="productInOrder : ${productsInOrders}">
+  <div th:text=""></div>
   <a th:href="@{/products/{id}(id=${productInOrder.getProduct().getProductId()})}"></a>
 
   <a th:href="@{/orders/{id}(id=${productInOrder.getOrder().getOrderId()})}"
@@ -14,6 +18,5 @@
 
 <br/>
 <hr/>
-<a href="/products/new">Add new Product</a>
 </body>
 </html>

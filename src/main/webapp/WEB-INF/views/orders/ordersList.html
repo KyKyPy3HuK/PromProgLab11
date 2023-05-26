@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Заказы</title>
+</head>
+<body>
+<a href="/orders">Назад</a>
+<br>
+<hr/>
+<div th:each="order : ${orders}">
+    <a th:href="@{/productsinorders/{id}(id=${order.getId()})}" th:text="${ 'ID: '+ order.getId() +', дата заказа: ' + order.getDate()}">Product</a>
+</div>
+
+</body>
+</html>

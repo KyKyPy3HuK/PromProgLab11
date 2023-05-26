@@ -5,8 +5,11 @@
     <title>Продукты</title>
 </head>
 <body>
+<a href="/index">Назад</a>
+<br>
+<hr/>
 <div th:each="product : ${products}">
-    <a th:href="@{/products/{id}{idb}(id=${product.getId()(idb=${product.getId()})}" th:text="${product.getName() +' '+ product.getDescription()}">Product</a>
+    <a th:href="@{/products/{id}(id=${product.getId()})}" th:text="${product.getName() +' '+ product.getDescription()}">Product</a>
 </div>
 
 <br/>

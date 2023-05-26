@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Товары в заказе</title>
 </head>
 <body>
-
+<a href="/orders">Назад</a>
+<br>
+<hr/>
+<div th:text="${'Идентификатор заказа: '+ orderId}"></div>
+<div th:each="pio : ${productsinorders}">
+    <a th:href="@{/products/{id}(id=${pio.getProduct().getId()})}"
+       th:text="${'ID товара: ' + pio.getProduct().getId()
+        + ', наименование: ' + pio.getProduct().getName()
+        + ', количество: ' + pio.getCount()}">Product</a>
+</div>
 </body>
 </html>

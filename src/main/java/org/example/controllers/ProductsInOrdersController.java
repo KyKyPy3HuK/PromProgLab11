@@ -24,5 +24,11 @@ public class ProductsInOrdersController {
         return "productsinorders/index";
     }
 
+    @GetMapping("/{id}")
+    public String getByID(@PathVariable("id") int id,Model model){
+        model.addAttribute("orderId",id);
+        model.addAttribute("productsinorders",productInOrderDao.getOrderInfoByOrderID(id));
+        return "productsinorders/getByOrderID";
+    }
 
 }
