@@ -12,3 +12,4 @@ public class PageController {
         return "pages/index";
     }
 }
+

@@ -103,8 +103,9 @@ public class OrderDao {
             ResultSet resultSet = preparedStatement.executeQuery();
             List<Order> orders = new ArrayList<>();
             while (resultSet.next()){
-                Order order = new Order(resultSet.getInt("orderID"),
-                        resultSet.getInt("date"));
+                int orderID = resultSet.getInt("orderID");
+                int dateFromQuery = resultSet.getInt("date");
+                Order order = new Order(orderID, dateFromQuery);
                 orders.add(order);
             }
             return orders;
