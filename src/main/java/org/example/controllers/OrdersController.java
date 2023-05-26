@@ -4,9 +4,7 @@ import org.example.dao.OrderDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/orders")
@@ -26,7 +24,27 @@ public class OrdersController {
         model.addAttribute("orders",orderDao.ordersList());
         return "orders/ordersList";
     }
-
+    @GetMapping("/ordersListSumAndCount")
+    public String ordersListBySumAndCount(@RequestParam("sum") int sum,  @RequestParam("count") int count, Model model){
+        model.addAttribute("orders",orderDao.getOrderBySumAndCountOfProducts(sum,count));
+        return "orders/ordersList";
+    }
+    @GetMapping("/ordersListProduct")
+    public String ordersList(@RequestParam("product") String product,Model model){
+        model.addAttribute("orders",orderDao.getOrderByProduct(product));
+        return "orders/ordersList";
+    }
+    @GetMapping("/ordersListNotProductAndDate")
+    public String ordersListNotProductAndDate(@RequestParam("product") String product, @RequestParam("date") int date, Model model)
+    {
+        model.addAttribute("orders",orderDao.getOrderByExcProductAndDate(product,date));
+        return "orders/ordersList";
+    }
+    @DeleteMapping("/ordersDelete")
+    public String ordersDelete(@RequestParam("product") String product, @RequestParam("count") int count){
+        orderDao.deleteOrderByProductAndCount(product,count);
+        return "productsinorders/index";
+    }
     @GetMapping("/orderByProductForm")
     public String orderByProductForm(){
         return "orderByProductForm";

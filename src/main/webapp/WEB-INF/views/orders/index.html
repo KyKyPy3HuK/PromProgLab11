@@ -11,35 +11,32 @@
 
 <a href="/orders/ordersList">Список заказов</a>
 <br>
-<form th:method="POST" th:action="@{/orders}" th:value="Integer${id}">
-    <label for="id">Enter product name: </label>
-    <input type="text" th:id="*{}" id="id"/>
-    <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
-    <br/>
-    <label for="description">Enter description</label>
-    <input type="text" th:field="*{description}" id="description"/>
-    <div style="color: red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description error</div>
-    <br/>
-    <label for="cost">Enter cost</label>
-    <input type="text" th:field="*{cost}" id="cost"/>
-    <div style="color: red" th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}">Cost error</div>
-    <br/>
-    <hr>
-    <input type="submit" value="Create!"/>
+<hr>
+<form th:method="GET" th:action="@{/orders/ordersListSumAndCount}">
+    <label for="sum">Найти заказ по минимальной сумме и количеству товаров: </label>
+    <input type="number" th:name="sum" id="sum"/>
+    <input type="number" th:name="count" id="count"/>
+    <input type="submit" value="Поиск"/>
 </form>
-
-
-
-
-
-
-<a href="/orders/orderByCountAndSumForm">Найти заказ по минимальной сумме и количеству товаров</a>
-
-<br>
-<a href="/orders/orderByProductForm">Найти заказ по товару</a>
-<br>
-<a href="/orders/orderByNotProductAndDateForm">Найти заказ без заданного товара по дате</a>
-<br>
-<a href="/orders/deleteOrdersByProductAndCountForm">Удалить заказы по товару и его количеству</a>
+<hr>
+<form th:method="GET" th:action="@{/orders/ordersListProduct}">
+    <label for="product">Найти заказ по товару: </label>
+    <input type="text" th:name="product" id="product"/>
+    <input type="submit" value="Поиск"/>
+</form>
+<hr>
+<form th:method="GET" th:action="@{/orders/ordersListNotProductAndDate}">
+    <label for="product1">Найти заказ без заданного товара по дате: </label>
+    <input type="text" th:name="product" id="product1"/>
+    <input type="number" th:name="date" id="date"/>
+    <input type="submit" value="Поиск"/>
+</form>
+<hr>
+<form th:method="DELETE" th:action="@{/orders/ordersDelete}">
+    <label for="product2">Удалить заказы по товару и его количеству: </label>
+    <input type="text" th:name="product" id="product2"/>
+    <input type="number" th:name="count" id="count1"/>
+    <input type="submit" value="Удалить"/>
+</form>
 </body>
 </html>
