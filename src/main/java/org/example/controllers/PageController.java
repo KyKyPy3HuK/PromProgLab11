@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PageController {
+    @GetMapping("/")
+    public String toIndex(){
+        return "pages/index";
+    }
     @GetMapping("/index")
     public String index(){
         return "pages/index";
