@@ -1,26 +1,33 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
- 
-  <div class="container">
-  <a class="navbar-brand fs-5" href="#">
-      <img src="../../images/logo.png" alt="Logo" width="40"  class="d-inline-block align-text-auto">
-      CodeMarket
-    </a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/orders">Заказы</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/products">Список продуктов</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/productsinorders">Продукты в заказах</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+      <nav th:fragment="nav" class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand fs-5" href="/index">
+          <img src="https://cdn.discordapp.com/attachments/897573880951083008/1117898392908091432/logo.png" alt="Logo" width="40"  class="d-inline-block align-text-auto">
+          CodeMarket
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/orders">Заказы</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/products">Товары</a>
+          </li>
+          </ul>
+          </div>
+        </div>
+      </nav>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</html>

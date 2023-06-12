@@ -2,41 +2,89 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Поиск заказов</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
-<a href="/index">Назад</a>
-<br>
-<hr>
+<div class="row" th:insert="templates/nav::nav"></div>
 
-<a href="/orders/ordersList">Список заказов</a>
-<br>
-<hr>
-<form th:method="GET" th:action="@{/orders/ordersListSumAndCount}">
-    <label for="sum">Найти заказ по минимальной сумме и количеству товаров: </label>
-    <input type="number" th:name="sum" id="sum"/>
-    <input type="number" th:name="count" id="count"/>
-    <input type="submit" value="Поиск"/>
-</form>
-<hr>
-<form th:method="GET" th:action="@{/orders/ordersListProduct}">
-    <label for="product">Найти заказ по товару: </label>
-    <input type="text" th:name="product" id="product"/>
-    <input type="submit" value="Поиск"/>
-</form>
-<hr>
-<form th:method="GET" th:action="@{/orders/ordersListNotProductAndDate}">
-    <label for="product1">Найти заказ без заданного товара по дате: </label>
-    <input type="text" th:name="product" id="product1"/>
-    <input type="number" th:name="date" id="date"/>
-    <input type="submit" value="Поиск"/>
-</form>
-<hr>
-<form th:method="DELETE" th:action="@{/orders/ordersDelete}">
-    <label for="product2">Удалить заказы по товару и его количеству: </label>
-    <input type="text" th:name="product" id="product2"/>
-    <input type="number" th:name="count" id="count1"/>
-    <input type="submit" value="Удалить"/>
-</form>
+<div class="container align-items-center">
+    <div class="row mt-5">
+        <p class="text-center fs-3"> Поиск заказов</p>
+    </div>
+    <div class="row mt-4 fs-3">
+        <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="/orders/ordersList">Список заказов</a>
+    </div>
+    <hr>
+    <form class="mt-4" th:method="GET" th:action="@{/orders/ordersListSumAndCount}">
+    <div class="row">
+            <div class="col-6">
+                <label for="sum">Найти заказ по минимальной сумме и количеству товаров: </label>
+            </div>
+            <div class="col-2">
+                <input class="form-control" type="number" th:name="sum" id="sum"/>
+            </div>
+            <div class="col-2">
+                <input class="form-control" type="number" th:name="count" id="count"/>
+            </div>
+            <div class="col-1">
+                <input class="btn btn-primary" type="submit" value="Поиск"/>
+            </div>
+    </div>
+        <hr>
+    </form>
+    <form class="mt-4" th:method="GET" th:action="@{/orders/ordersListProduct}">
+        <div class="row">
+            <div class="col-6">
+                <label for="product">Найти заказ по товару: </label>
+            </div>
+            <div class="col-4">
+                <input class="form-control" type="text" th:name="product" id="product"/>
+            </div>
+            <div class="col-1">
+                <input class="btn btn-primary" type="submit" value="Поиск"/>
+            </div>
+        </div>
+    </form>
+    <hr>
+    <form class="mt-4" th:method="GET" th:action="@{/orders/ordersListNotProductAndDate}">
+        <div class="row">
+            <div class="col-6">
+                <label for="product1">Найти заказ без заданного товара по дате: </label>
+            </div>
+            <div class="col-2">
+                <input  class="form-control" type="text" th:name="product" id="product1"/>
+            </div>
+            <div class="col-2">
+                <input  class="form-control" type="number" th:name="date" id="date"/>
+            </div>
+            <div class="col-1">
+                <input class="btn btn-primary" type="submit" value="Поиск"/>
+            </div>
+        </div>
+    </form>
+    <hr>
+    <form class="mt-4" th:method="DELETE" th:action="@{/orders/ordersDelete}">
+        <div class="row">
+            <div class="col-6">
+                <label for="product2">Удалить заказы по товару и его количеству: </label>
+            </div>
+            <div class="col-2">
+                <input class="form-control" type="text" th:name="product" id="product2"/>
+            </div>
+            <div class="col-2">
+                <input class="form-control" type="number" th:name="count" id="count1"/>
+            </div>
+            <div class="col-1">
+                <input class="btn btn-primary" type="submit" value="Удалить"/>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<div class="row" th:insert="templates/footer::footer"></div>
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </html>

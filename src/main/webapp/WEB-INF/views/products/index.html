@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Продукты</title>
-</head>
-<body>
-<a href="/index">Назад</a>
-<br>
-<hr/>
-<div th:each="product : ${products}">
-    <a th:href="@{/products/{id}(id=${product.getId()})}" th:text="${product.getName() +' '+ product.getDescription()}">Product</a>
-</div>
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
-<br/>
-<hr/>
-<a href="/products/new">Add new Product</a>
+</head>
+
+<body>
+<div class="row" th:insert="templates/nav::nav"></div>
+
+
+<div class="container">
+    <div class="row fs-3 mt-5">
+        <p class="text-center">Список товаров</p>
+    </div>
+    <hr>
+    <div class="row fs-5">
+        <div th:each="product : ${products}">
+            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" th:href="@{/products/{id}(id=${product.getId()})}" th:text="${product.getName() +' '+ product.getDescription()}">Product</a>
+        </div>
+    </div>
+    <hr>
+    <div class="row fs-5">
+        <a href="/products/new" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Добавить товар в базу</a>
+    </div>
+
+</div>
+<div class="row" th:insert="templates/footer::footer"></div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </html>

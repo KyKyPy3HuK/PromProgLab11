@@ -3,39 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Главная</title>
+    <link rel="stylesheet" href="../../css/common/common.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
- 
-  <div class="container">
-  <a class="navbar-brand fs-5" href="#">
-      <img src="../../images/logo.png" alt="Logo" width="40"  class="d-inline-block align-text-auto">
-      CodeMarket
-    </a>
+    <div class="row" th:insert="templates/nav::nav"></div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/orders">Заказы</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/products">Список продуктов</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/productsinorders">Продукты в заказах</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-<div style="margin-top: 100px" class="text-center"> 
+<div style="margin-top: 100px" class="text-center">
     <p class="fs-1">CodeMarket</p>
 </div>
 
@@ -56,46 +31,9 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis obcaecati illum ipsa quidem nisi eaque veniam, provident a reprehenderit eum, vero aliquam possimus maiores ad quam, voluptate quis nemo fugiat deleniti aut perferendis libero. Veniam quis, tempore quasi soluta magni quidem fugit mollitia eius, alias, sint culpa? Esse provident, totam similique, molestias exercitationem consequatur ab pariatur asperiores, reprehenderit veritatis architecto perferendis distinctio. Sapiente, perferendis quos cum quidem labore? Aliquid labore quis possimus adipisci tenetur distinctio illum cupiditate itaque harum deleniti ab ipsa vel molestias neque quas perferendis exercitationem, nam doloribus veniam voluptate sed excepturi voluptatem modi ut. Eum omnis adipisci laborum facilis quibusdam ipsa quasi iste temporibus obcaecati accusamus minima, facere quidem rem rerum assumenda voluptatem, illo placeat eaque nobis blanditiis accusantium. Architecto pariatur in alias quisquam, assumenda quae repellendus nostrum, impedit quo accusantium, minima. Molestiae delectus iure facilis expedita porro nobis perferendis animi vero necessitatibus doloremque provident illo culpa quasi ab ipsa atque voluptas harum veniam, odio nemo, at exercitationem pariatur distinctio? Omnis dolorem similique voluptates iste quo pariatur perspiciatis vero voluptate consequuntur quidem. Repellendus, sed aliquid facere enim saepe debitis amet adipisci expedita, quasi libero autem necessitatibus repudiandae tempora in atque similique voluptas cupiditate magni. Officiis modi placeat eos porro commodi sunt enim rem inventore non architecto iure nobis quo, est amet accusantium consequuntur quae laudantium. Cum ipsam officiis, corrupti doloremque quia distinctio enim voluptatum illo quibusdam quidem! Illum quod earum, deleniti corporis porro recusandae voluptates sequi cum, placeat optio quia voluptas debitis facilis provident eum eius hic. Deleniti voluptatem cum provident suscipit, hic magni cupiditate quam, veniam magnam nisi unde consectetur, pariatur nulla! Esse dolores saepe ipsam tenetur eum enim iure. Itaque maxime, voluptates atque vero sequi voluptatem, doloremque officiis id, ipsa ratione fugit nisi expedita repellendus quod obcaecati, cumque ullam? Delectus atque libero dicta, dolorum assumenda.
         </div>
     </div>
-
 </div>
 
-
-
-
-
-<footer class="mt-5 pt-5 pb-5 footer">
-<div class="container">
- <hr>
-  <div class="row">
-    <div class="col-lg-5 col-xs-12 about-company">
-      <h2>О компании</h2>
-      <p class="pr-5 text-black">CodeMarket это сеть магазинов цифровых товаров по всей России.</p>
-      <div class="row mt-4">
-    <div class="col copyright">
-      <p class=""><small class="text-black-50">© 2023. All Rights Reserved.</small></p>
-    </div>
-    </div>
-    </div>
-    
-    <div class="col-lg-3 col-xs-12 links">
-        <div class="row fs-3">Ссылки</div>
-        <div class="row">
-            <a class="link-secondary p-0" href="">Поставщики</a>
-            <a class="link-secondary p-0" href="">Гарантии</a>
-            <a class="link-secondary p-0" href="">Доставка</a>
-        </div>
-    </div>
-    <div class="col-lg-4 col-xs-12 location">
-      <h4 class="mt-lg-0 mt-sm-4">Адрес</h4>
-      <p>г. Рязань, РГРТУ, общежитие 5</p>
-      <p class="mb-0"><i class="fa fa-phone mr-3"></i>8961 035-55-35</p>
-      <p><i class="fa fa-envelope-o mr-3"></i>svyatoslav.wot@gmail.com</p>
-    </div>
-  </div>
-  
-</div>
-</footer>
-
+    <div class="row" th:insert="templates/footer::footer"></div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
