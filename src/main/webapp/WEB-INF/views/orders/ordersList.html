@@ -8,9 +8,10 @@
 <body>
 <div class="row" th:insert="templates/nav::nav"></div>
 <div class="container align-items-center">
-    <div class="row mt-5 mb-5">
+    <div class="row mt-5">
         <p class="text-center fs-3">Список заказов</p>
     </div>
+    <hr>
 <div class="row fs-5" th:each="order : ${orders}">
     <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
        th:href="@{/productsinorders/{id}(id=${order.getId()})}" th:text="${ 'ID: '+ order.getId() +', дата заказа: ' + order.getDate()}">Product</a>

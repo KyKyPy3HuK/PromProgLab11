@@ -8,9 +8,10 @@
 <body>
 <div class="row" th:insert="templates/nav::nav"></div>
 <div class="container align-items-center fs-5">
-    <div class="row mt-5 mb-5">
+    <div class="row mt-5">
         <p class="text-center fs-3">О заказе</p>
     </div>
+    <hr>
     <div class="row fs-3">
         <div  th:text="${'Идентификатор заказа: '+ orderId}"></div>
         <p>Список заказанных товаров:</p>

@@ -8,9 +8,10 @@
 <body>
 <div class="row" th:insert="templates/nav::nav"></div>
 <div class="container align-items-center fs-5">
-    <div class="row mt-5 mb-5">
+    <div class="row mt-5">
         <p class="text-center fs-3">О товаре</p>
     </div>
+    <hr>
         <div>ID: </div>
         <div th:text="${product.getId()}"></div>
         <br>
