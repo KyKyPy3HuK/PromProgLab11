@@ -1,10 +1,12 @@
 package org.example.models;
 
+import java.sql.Date;
+
 public class Order {
     private int id;
-    private int date;
+    private Date date;
 
-    public Order(int id, int date){
+    public Order(int id, Date date){
         this.id=id;
         this.date=date;
     }
@@ -18,11 +20,11 @@ public class Order {
         this.id = id;
     }
 
-    public int getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

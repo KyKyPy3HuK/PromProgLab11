@@ -39,7 +39,7 @@ public class ProductInOrderDao {
                 ProductInOrder productInOrder = new ProductInOrder(
                         new Order(
                                 resultSet.getInt("orderID"),
-                                resultSet.getInt("date")
+                                resultSet.getDate("date")
                         ),
                         new Product(
                                 resultSet.getInt("productID"),

@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
+
 @Controller
 @RequestMapping("/orders")
 public class OrdersController {
@@ -35,7 +37,7 @@ public class OrdersController {
         return "orders/ordersList";
     }
     @GetMapping("/ordersListNotProductAndDate")
-    public String ordersListNotProductAndDate(@RequestParam("product") String product, @RequestParam("date") int date, Model model)
+    public String ordersListNotProductAndDate(@RequestParam("product") String product, @RequestParam("date") Date date, Model model)
     {
         model.addAttribute("orders",orderDao.getOrderByExcProductAndDate(product,date));
         return "orders/ordersList";

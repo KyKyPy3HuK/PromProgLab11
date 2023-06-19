@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +30,7 @@ public class OrderDao {
                 Order order = new Order(
 
                         resultSet.getInt("ID"),
-                        resultSet.getInt("date")
+                        resultSet.getDate("date")
                 );
                 orders.add(order);
             }
@@ -58,7 +55,7 @@ public class OrderDao {
                 while (resultSet.next()){
                     Order order = new Order(
                             resultSet.getInt("ID"),
-                            resultSet.getInt("date")
+                            resultSet.getDate("date")
                             );
                     orders.add(order);
                 }
@@ -81,7 +78,7 @@ public class OrderDao {
             while (resultSet.next()){
                 Order order = new Order(
                 resultSet.getInt("orderID"),
-                resultSet.getInt("date")
+                resultSet.getDate("date")
                 );
                 orders.add(order);
             }
@@ -90,7 +87,7 @@ public class OrderDao {
             throw new RuntimeException(e);
         }
     }
-    public List<Order> getOrderByExcProductAndDate(String productName, int date){
+    public List<Order> getOrderByExcProductAndDate(String productName, Date date){
         try(Connection connection = dataSource.getConnection()){
             PreparedStatement preparedStatement =
                     connection.prepareStatement("""
@@ -99,12 +96,12 @@ public class OrderDao {
                     where name != ? and date = ?
                     """);
             preparedStatement.setString(1,productName);
-            preparedStatement.setInt(2,date);
+            preparedStatement.setDate(2,date);
             ResultSet resultSet = preparedStatement.executeQuery();
             List<Order> orders = new ArrayList<>();
             while (resultSet.next()){
                 int orderID = resultSet.getInt("orderID");
-                int dateFromQuery = resultSet.getInt("date");
+                Date dateFromQuery = resultSet.getDate("date");
                 Order order = new Order(orderID, dateFromQuery);
                 orders.add(order);
             }
